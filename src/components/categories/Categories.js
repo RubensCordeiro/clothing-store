@@ -1,4 +1,4 @@
-import { categories } from "../../../mocks/categories";
+import { categories } from "../../mocks/categories";
 import Category from "./Category";
 
 const categoryList = categories.map((category) => {
@@ -10,8 +10,6 @@ const categoryList = categories.map((category) => {
     />
   );
 });
-
-console.log(categoryList);
 
 const Categories = () => {
   return (
