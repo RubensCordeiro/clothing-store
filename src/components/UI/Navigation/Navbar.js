@@ -5,9 +5,13 @@ const Navbar = () => {
       <Link to={"/"} className="">
         <img src="crown.svg" alt="SVG Logo" />
       </Link>
-      <ul className="text-zinc-600 hover:text-zinc-800">
-        <li className="flex gap-x-2 items-center">
+      <ul className="text-zinc-600 flex gap-x-2 items-center ">
+        <li className="hover:text-zinc-800">
           <Link to={"/shop"}>Shop</Link>
+        </li>
+        {"|"}
+        <li className="hover:text-zinc-800">
+          <Link to={"/sign-in"}>Sign-in</Link>
         </li>
       </ul>
     </nav>
