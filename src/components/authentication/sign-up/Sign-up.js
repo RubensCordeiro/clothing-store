@@ -24,7 +24,7 @@ const SignUp = () => {
   };
 
   return (
-    <article className="grow">
+    <article className="w-[60%]">
       <h1 className="text-xl text-zinc-800 font-bold mb-1">
         I do not have an account
       </h1>
