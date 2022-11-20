@@ -11,7 +11,7 @@ const Navbar = () => {
         </li>
         {"|"}
         <li className="hover:text-zinc-800">
-          <Link to={"/sign-in"}>Sign-in</Link>
+          <Link to={"/auth"}>Sign-in</Link>
         </li>
       </ul>
     </nav>
