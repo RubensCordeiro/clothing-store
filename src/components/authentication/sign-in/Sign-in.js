@@ -1,8 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useState, useContext } from "react";
 
-import { userContext } from "../../contexts/userContext";
-
 import {
   signInWithGooglePopup,
   createUserDocumentFromAuth,
@@ -19,8 +17,6 @@ const SignIn = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
 
-  const { setCurrentUser } = useContext(userContext);
-
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormFields((prevState) => {
@@ -29,8 +25,7 @@ const SignIn = () => {
   };
 
   const logGoogleUser = async () => {
-    const { user } = await signInWithGooglePopup();
-    const userDocRef = await createUserDocumentFromAuth(user);
+    await signInWithGooglePopup();
   };
 
   const submitHandler = async (e) => {
@@ -40,7 +35,6 @@ const SignIn = () => {
         email,
         password
       );
-      setCurrentUser(user);
     } catch (error) {
       if (["auth/user-not-found", "auth/wrong-password"].includes(error.code)) {
         alert("Wrong username or password");

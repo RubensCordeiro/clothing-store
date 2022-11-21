@@ -4,12 +4,7 @@ import { userContext } from "../../contexts/userContext";
 import { signOutUser } from "../../../utils/firebase/firebase.utils";
 
 const Navbar = () => {
-  const { currentUser, setCurrentUser } = useContext(userContext);
-
-  const handleSignout = async () => {
-    await signOutUser();
-    setCurrentUser(null);
-  };
+  const { currentUser } = useContext(userContext);
 
   return (
     <nav className="px-6 py-4 mb-2 flex justify-between items-center bg-zinc-100">
@@ -28,7 +23,7 @@ const Navbar = () => {
         )}
         {currentUser !== null && (
           <li className="hover:text-zinc-800">
-            <span className="cursor-pointer" onClick={handleSignout}>
+            <span className="cursor-pointer" onClick={signOutUser}>
               Sign-out
             </span>
           </li>
