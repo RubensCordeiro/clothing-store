@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+
 import { createContext, useState, useEffect } from "react";
 import { onAuthStateChangedListener } from "../../utils/firebase/firebase.utils";
 import { createUserDocumentFromAuth } from "../../utils/firebase/firebase.utils";

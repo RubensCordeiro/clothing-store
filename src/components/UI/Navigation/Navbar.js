@@ -3,11 +3,14 @@ import { Link } from "react-router-dom";
 import { userContext } from "../../contexts/userContext";
 import { signOutUser } from "../../../utils/firebase/firebase.utils";
 
+import CartIcon from "../../cart/CartIcon";
+import CartDropdown from "../../cart/CartDropdown";
+
 const Navbar = () => {
   const { currentUser } = useContext(userContext);
 
   return (
-    <nav className="px-6 py-4 mb-2 flex justify-between items-center bg-zinc-100">
+    <nav className="relative px-6 py-4 mb-2 flex justify-between items-center align-center bg-zinc-100 z-10">
       <Link to={"/"} className="">
         <img src="crown.svg" alt="SVG Logo" />
       </Link>
@@ -28,7 +31,11 @@ const Navbar = () => {
             </span>
           </li>
         )}
+        <li>
+          <CartIcon />
+        </li>
       </ul>
+      <CartDropdown />
     </nav>
   );
 };

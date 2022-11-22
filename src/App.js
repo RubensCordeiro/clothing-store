@@ -6,18 +6,23 @@ import HomePage from "./components/pages/home/HomePage";
 import AuthenticationPage from "./components/pages/authentication/AuthenticationPage";
 
 import { UserProvider } from "./components/contexts/userContext";
+import { ProductsProvider } from "./components/contexts/productsContext";
+import Shop from "./components/pages/shop/Shop";
 
 const App = () => {
   return (
     <div className="App">
       <UserProvider>
-        <Navbar />
-        <GlobalContainer>
-          <Routes>
-            <Route index element={<HomePage />} />
-            <Route path="/auth" element={<AuthenticationPage />} />
-          </Routes>
-        </GlobalContainer>
+        <ProductsProvider>
+          <Navbar />
+          <GlobalContainer>
+            <Routes>
+              <Route index element={<HomePage />} />
+              <Route path="/auth" element={<AuthenticationPage />} />
+              <Route path="/shop" element={<Shop />} />
+            </Routes>
+          </GlobalContainer>
+        </ProductsProvider>
       </UserProvider>
     </div>
   );
