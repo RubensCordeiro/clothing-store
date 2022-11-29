@@ -6,8 +6,12 @@ import { signOutUser } from "../../../utils/firebase/firebase.utils";
 import CartIcon from "../../cart/CartIcon";
 import CartDropdown from "../../cart/CartDropdown";
 
+import { cartContext } from "../../contexts/cartContext";
+
 const Navbar = () => {
   const { currentUser } = useContext(userContext);
+
+  const { cartOpen, toggleCart, totalItems } = useContext(cartContext);
 
   return (
     <nav className="relative px-6 py-4 mb-2 flex justify-between items-center align-center bg-zinc-100 z-10">
@@ -32,10 +36,10 @@ const Navbar = () => {
           </li>
         )}
         <li>
-          <CartIcon />
+          <CartIcon clickHandler={toggleCart} itemQuantity={totalItems} />
         </li>
       </ul>
-      <CartDropdown />
+      {cartOpen && <CartDropdown />}
     </nav>
   );
 };

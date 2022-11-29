@@ -7,6 +7,7 @@ import AuthenticationPage from "./components/pages/authentication/Authentication
 
 import { UserProvider } from "./components/contexts/userContext";
 import { ProductsProvider } from "./components/contexts/productsContext";
+import { CartProvider } from "./components/contexts/cartContext";
 import Shop from "./components/pages/shop/Shop";
 
 const App = () => {
@@ -14,14 +15,16 @@ const App = () => {
     <div className="App">
       <UserProvider>
         <ProductsProvider>
-          <Navbar />
-          <GlobalContainer>
-            <Routes>
-              <Route index element={<HomePage />} />
-              <Route path="/auth" element={<AuthenticationPage />} />
-              <Route path="/shop" element={<Shop />} />
-            </Routes>
-          </GlobalContainer>
+          <CartProvider>
+            <Navbar />
+            <GlobalContainer>
+              <Routes>
+                <Route index element={<HomePage />} />
+                <Route path="/auth" element={<AuthenticationPage />} />
+                <Route path="/shop" element={<Shop />} />
+              </Routes>
+            </GlobalContainer>
+          </CartProvider>
         </ProductsProvider>
       </UserProvider>
     </div>

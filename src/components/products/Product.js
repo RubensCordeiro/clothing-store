@@ -1,7 +1,15 @@
+import { useContext } from "react";
+import { cartContext } from "../contexts/cartContext";
+
 const Product = ({ name, price, imageUrl }) => {
+  const { addItemToCart } = useContext(cartContext);
+
   return (
     <article className="flex flex-col w-[250px] border border-solid border-zinc-200 rounded-sm">
-      <div className="relative w-full h-full flex flex-col items-center">
+      <div
+        className="relative w-full h-full flex flex-col items-center"
+        onClick={() => addItemToCart({ name, price, imageUrl })}
+      >
         <img
           className="peer object-cover h-full hover:opacity-50 cursor-pointer z-0"
           src={imageUrl}
