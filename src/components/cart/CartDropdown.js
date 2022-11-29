@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { cartContext } from "../contexts/cartContext";
 import CartItem from "./CartItem";
+import { Link } from "react-router-dom";
 
 const CartDropdown = () => {
   const { cartItems } = useContext(cartContext);
@@ -15,9 +16,12 @@ const CartDropdown = () => {
         <span>Your Items</span>
         <div className="text-zinc-700">{itemList}</div>
       </div>
-      <button className="mt-1 mx-auto w-[70%] p-2 bg-zinc-700 rounded-sm text-white border border-solid border-transparent hover:bg-transparent hover:text-zinc-800 hover:border-zinc-700">
+      <Link
+        to={"/checkout"}
+        className="mt-1 mx-auto w-[70%] p-2 bg-zinc-700 rounded-sm text-white border border-solid border-transparent hover:bg-transparent hover:text-zinc-800 hover:border-zinc-700"
+      >
         Go to checkout
-      </button>
+      </Link>
     </div>
   );
 };

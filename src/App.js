@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router";
 
 import HomePage from "./components/pages/home/HomePage";
 import AuthenticationPage from "./components/pages/authentication/AuthenticationPage";
+import CheckoutPage from "./components/pages/checkout/CheckoutPage";
 
 import { UserProvider } from "./components/contexts/userContext";
 import { ProductsProvider } from "./components/contexts/productsContext";
@@ -22,6 +23,7 @@ const App = () => {
                 <Route index element={<HomePage />} />
                 <Route path="/auth" element={<AuthenticationPage />} />
                 <Route path="/shop" element={<Shop />} />
+                <Route path="/checkout" element={<CheckoutPage />} />
               </Routes>
             </GlobalContainer>
           </CartProvider>
