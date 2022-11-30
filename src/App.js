@@ -7,7 +7,7 @@ import AuthenticationPage from "./components/pages/authentication/Authentication
 import CheckoutPage from "./components/pages/checkout/CheckoutPage";
 
 import { UserProvider } from "./components/contexts/userContext";
-import { ProductsProvider } from "./components/contexts/productsContext";
+import { CategoryProvider } from "./components/contexts/categoryContext";
 import { CartProvider } from "./components/contexts/cartContext";
 import Shop from "./components/pages/shop/Shop";
 
@@ -15,7 +15,7 @@ const App = () => {
   return (
     <div className="App">
       <UserProvider>
-        <ProductsProvider>
+        <CategoryProvider>
           <CartProvider>
             <Navbar />
             <GlobalContainer>
@@ -27,7 +27,7 @@ const App = () => {
               </Routes>
             </GlobalContainer>
           </CartProvider>
-        </ProductsProvider>
+        </CategoryProvider>
       </UserProvider>
     </div>
   );
