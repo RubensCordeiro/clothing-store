@@ -10,7 +10,7 @@ const CheckoutPage = () => {
 
   useEffect(() => {
     setCartOpen(false);
-  }, []);
+  });
 
   const itemList = cartItems.map((cartItem) => (
     <CheckoutItem key={cartItem.name} checkoutItem={cartItem} />
