@@ -35,11 +35,13 @@ const CheckoutItem = ({ checkoutItem }) => {
         <span className="flex items-center justify-center text-sm text-zinc-700">
           {price}
         </span>
-        <div
-          className="flex items-center justify-center text-sm text-red-600"
-          onClick={() => deleteItemFromCart({ name })}
-        >
-          <span className="cursor-pointer scale-125 hover:scale-150">X</span>
+        <div className="flex items-center justify-center text-sm text-red-600">
+          <span
+            className="cursor-pointer scale-125 hover:scale-150"
+            onClick={() => deleteItemFromCart({ name })}
+          >
+            X
+          </span>
         </div>
       </div>
     </article>
