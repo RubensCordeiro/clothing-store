@@ -15,14 +15,19 @@ const Products = () => {
       )
     );
     return (
-      <article className="border border-solid border-zinc-600">
-        <h2>{category.toUpperCase()}</h2>
-        <div className="mx-auto grid grid-cols-4">{categoryProducts}</div>
+      <article className="mx-auto w-full md:px-8">
+        <h2 className="font-light text-2xl text-zinc-900 mb-1">
+          {category.toUpperCase()}
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-x-4 gap-y-4">
+          {categoryProducts}
+        </div>
+        <div className="border-b-[1px] border-solid border-zinc-400 mx-auto w-[95%] py-2"></div>
       </article>
     );
   });
 
-  return <section className="flex flex-col gap-y-4">{productList}</section>;
+  return <section className="flex flex-col gap-y-2">{productList}</section>;
 };
 
 export default Products;

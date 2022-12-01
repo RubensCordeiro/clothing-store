@@ -5,25 +5,27 @@ const Product = ({ name, price, imageUrl }) => {
   const { addItemToCart } = useContext(cartContext);
 
   return (
-    <h2>{name}</h2>
-    // <article className="flex flex-col border border-solid border-zinc-200 rounded-sm">
-    //   <div
-    //     className="relative w-full h-full flex flex-col items-center"
-    //     onClick={() => addItemToCart({ name, price, imageUrl })}
-    //   >
-    //     <img
-    //       className="peer object-cover h-full hover:opacity-50 cursor-pointer z-0"
-    //       src={imageUrl}
-    //     />
-    //     <span className="absolute top-[90%] w-full text-center bg-white/[.2] invisible z-10 peer-hover:visible">
-    //       Add to cart
-    //     </span>
-    //   </div>
-    //   <div className="flex justify-between px-1">
-    //     <span className="text-zinc-800">{name}</span>
-    //     <span className="text-zinc-800">{price}</span>
-    //   </div>
-    // </article>
+    <article className="w-full h-[350px] flex flex-col mx-auto">
+      <div
+        className="relative w-full h-[95%] rounded-sm flex flex-col cursor-pointer"
+        onClick={() => addItemToCart({ name, price, imageUrl })}
+      >
+        <img
+          src={imageUrl}
+          alt=""
+          className="peer h-full w-full object-cover z-0 hover:opacity-50 rounded-sm"
+        />
+        <span className="w-full absolute top-[50%] text-center invisible z-10 peer-hover:visible text-zinc-900 font-light">
+          <span className="border-y-[1px] border-solid border-zinc-900">
+            Add to cart
+          </span>
+        </span>
+      </div>
+      <div className="flex justify-between font-light text-zinc-700">
+        <span className="">{name}</span>
+        <span className="">{price}</span>
+      </div>
+    </article>
   );
 };
 
