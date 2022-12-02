@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const Category = (params) => {
   const { title, imageUrl } = params;
   return (
@@ -7,10 +8,13 @@ const Category = (params) => {
         backgroundImage: `url(${imageUrl})`,
       }}
     >
-      <div className="border border-solid border-zinc-400 px-8 py-4 bg-zinc-100 opacity-80 rounded cursor-pointer hover:opacity-100">
+      <Link
+        to={`/shop/${title.toLowerCase()}`}
+        className="border border-solid border-zinc-400 px-8 py-4 bg-zinc-100 opacity-80 rounded cursor-pointer hover:opacity-100"
+      >
         <h2 className="font-bold text-lg">{title}</h2>
         <p>Shop Now</p>
-      </div>
+      </Link>
     </div>
   );
 };
