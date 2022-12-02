@@ -1,10 +1,12 @@
-import Products from "../../products/Products";
+import CategoriesPreviewPage from "../categories/CategoriesPreviewPage";
+
+import { Routes, Route } from "react-router";
 
 const Shop = () => {
   return (
-    <section>
-      <Products />
-    </section>
+    <Routes>
+      <Route index element={<CategoriesPreviewPage />} />
+    </Routes>
   );
 };
 

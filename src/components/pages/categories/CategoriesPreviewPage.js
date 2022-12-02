@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import { categoryContext } from "../contexts/categoryContext";
+import { categoryContext } from "../../contexts/categoryContext";
 
-import CategoryPreview from "../categories/CategoryPreview";
+import CategoryPreview from "../../categories/CategoryPreview";
 
-const Products = () => {
+const CategoriesPreviewPage = () => {
   const { categoryMap } = useContext(categoryContext);
 
   const categoryList = Object.keys(categoryMap);
@@ -21,4 +21,4 @@ const Products = () => {
   return <section className="flex flex-col gap-y-2">{productList}</section>;
 };
 
-export default Products;
+export default CategoriesPreviewPage;
