@@ -15,7 +15,7 @@ const Products = () => {
       )
     );
     return (
-      <article className="mx-auto w-full md:px-8">
+      <article className="mx-auto w-full md:px-8" key={Math.random()}>
         <h2 className="font-light text-2xl text-zinc-900 mb-1">
           {category.toUpperCase()}
         </h2>
