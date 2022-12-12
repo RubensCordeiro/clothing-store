@@ -19,7 +19,7 @@ const CategoryPage = () => {
   }, [category, categoryMap]);
 
   return (
-    <article>
+    <article className="md:px-4 mx-auto">
       <h2 className="font-light text-2xl text-zinc-900 mb-1">
         {category.toUpperCase()}
       </h2>
