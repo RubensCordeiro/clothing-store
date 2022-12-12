@@ -2,13 +2,18 @@ import { useContext } from "react";
 import { cartContext } from "../contexts/cartContext";
 
 const Product = ({ name, price, imageUrl }) => {
-  const { addItemToCart } = useContext(cartContext);
+  const { cartItemDispatch } = useContext(cartContext);
 
   return (
     <article className="w-full h-[350px] flex flex-col mx-auto">
       <div
         className="relative w-full h-[95%] rounded-sm flex flex-col cursor-pointer"
-        onClick={() => addItemToCart({ name, price, imageUrl })}
+        onClick={() =>
+          cartItemDispatch({
+            type: "ADD_ITEM",
+            payload: { itemToUpdate: { name, price, imageUrl } },
+          })
+        }
       >
         <img
           src={imageUrl}

@@ -4,8 +4,7 @@ import { cartContext } from "../../contexts/cartContext";
 const CheckoutItem = ({ checkoutItem }) => {
   const { name, price, imageUrl, quantity } = checkoutItem;
 
-  const { addItemToCart, removeItemFromCart, deleteItemFromCart } =
-    useContext(cartContext);
+  const { cartItemDispatch } = useContext(cartContext);
 
   return (
     <article>
@@ -20,14 +19,24 @@ const CheckoutItem = ({ checkoutItem }) => {
         <div className="relative flex items-center justify-center gap-x-1">
           <span
             className="scale-y-150 text-zinc-600 font-bold cursor-pointer hover:text-teal-600"
-            onClick={() => removeItemFromCart({ name })}
+            onClick={() =>
+              cartItemDispatch({
+                type: "REMOVE_ITEM",
+                payload: { itemToUpdate: { name } },
+              })
+            }
           >
             {"<"}
           </span>
           <span className=" text-sm text-zinc-700">{quantity}</span>
           <span
             className="scale-y-150 text-zinc-600 font-bold cursor-pointer hover:text-teal-600"
-            onClick={() => addItemToCart({ name })}
+            onClick={() =>
+              cartItemDispatch({
+                type: "ADD_ITEM",
+                payload: { itemToUpdate: { name } },
+              })
+            }
           >
             {">"}
           </span>
@@ -38,7 +47,12 @@ const CheckoutItem = ({ checkoutItem }) => {
         <div className="flex items-center justify-center text-sm text-red-600">
           <span
             className="cursor-pointer scale-125 hover:scale-150"
-            onClick={() => deleteItemFromCart({ name })}
+            onClick={() =>
+              cartItemDispatch({
+                type: "DELETE_ITEM",
+                payload: { itemToUpdate: { name } },
+              })
+            }
           >
             X
           </span>
